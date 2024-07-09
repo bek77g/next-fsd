@@ -2,10 +2,9 @@ import createMiddleware from 'next-intl/middleware';
 import { locales } from './i18n.config';
 
 export default createMiddleware({
-	defaultLocale: 'ru',
 	locales,
-	// localeDetection: true,
-	localePrefix: 'as-needed',
+	defaultLocale: 'ru',
+	localeDetection: false,
 });
 
 export const config = {
