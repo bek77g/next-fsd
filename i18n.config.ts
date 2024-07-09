@@ -1,5 +1,6 @@
 import { createSharedPathnamesNavigation } from 'next-intl/navigation';
 
+export const defaultLocale = 'ru';
 export const locales = ['ru', 'ky'] as const;
 export type LocaleType = (typeof locales)[number];
 

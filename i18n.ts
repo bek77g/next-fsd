@@ -8,6 +8,9 @@ export default getRequestConfig(async ({ locale }) => {
 	}
 
 	return {
-		messages: (await import(`./public/locales/${locale}.json`)).default,
+		messages: {
+			...(await import(`./public/locales/${locale}/common.json`)).default,
+			...(await import(`./public/locales/${locale}/auth.json`)).default,
+		},
 	};
 });
