@@ -1,10 +1,10 @@
 import { locales } from '@/i18n.config';
-import type { Metadata } from 'next';
-
 import { AppProvider } from '@/src/app/providers';
+import type { Metadata } from 'next';
+import { unstable_setRequestLocale } from 'next-intl/server';
+
 import '@/src/app/styles/antd.scss';
 import '@/src/app/styles/globals.css';
-import { unstable_setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
 	title: 'Next App | FSD',

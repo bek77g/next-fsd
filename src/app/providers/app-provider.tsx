@@ -8,7 +8,7 @@ interface AppProviderProps {
 	locale: string;
 }
 
-export function AppProvider({ children, locale }: AppProviderProps) {
+export async function AppProvider({ children, locale }: AppProviderProps) {
 	const messages = await getMessages();
 
 	return (

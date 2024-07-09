@@ -1,3 +1,9 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+
 export default function Home({ params: { locale } }) {
-	return <main>{locale}</main>;
+	const t = useTranslations('general');
+
+	return <main>{t('appName')}</main>;
 }
