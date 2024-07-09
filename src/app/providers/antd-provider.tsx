@@ -2,6 +2,7 @@ import { COLORS } from '@/src/app/constants';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { ConfigProvider, ThemeConfig } from 'antd';
 import ru_RU from 'antd/lib/locale/ru_RU';
+import { ReactNode } from 'react';
 
 const theme: ThemeConfig = {
 	components: {
@@ -79,7 +80,7 @@ const theme: ThemeConfig = {
 	},
 };
 
-export const AntdProvider = ({ children }: any) => {
+export const AntdProvider = ({ children }: { children: ReactNode }) => {
 	return (
 		<AntdRegistry>
 			<ConfigProvider theme={theme} locale={ru_RU}>
