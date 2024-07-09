@@ -7,6 +7,7 @@ export default createMiddleware({
 	localeDetection: true,
 	localePrefix: 'as-needed',
 });
+
 export const config = {
 	matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 };

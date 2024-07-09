@@ -8,7 +8,7 @@ import {
 	type Locale,
 } from '@/i18n.config';
 
-export default function LocaleSwitcher({ locale }: { locale: Locale }) {
+export function LocaleSwitcher({ locale }: { locale: Locale }) {
 	const pathname = usePathname();
 	const router = useRouter();
 

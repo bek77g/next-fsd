@@ -1,6 +1,7 @@
 import { locales } from '@/i18n.config';
 import type { Metadata } from 'next';
 
+import { AppProvider } from '@/src/app/providers';
 import '@/src/app/styles/antd.scss';
 import '@/src/app/styles/globals.css';
 import { unstable_setRequestLocale } from 'next-intl/server';
@@ -25,7 +26,9 @@ export default function LocaleLayout({
 
 	return (
 		<html lang={locale}>
-			<body>{children}</body>
+			<AppProvider locale={locale}>
+				<body>{children}</body>
+			</AppProvider>
 		</html>
 	);
 }
