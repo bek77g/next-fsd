@@ -6,15 +6,15 @@ import { z } from 'zod';
 import { authConfig } from './auth.config';
 
 async function getUser(
-	pin: string,
+	login: string,
 	password: string,
 	recaptchaToken: string
 ): Promise<IUserState | null> {
 	try {
 		const { data, error, message } = await $api.post(
-			'https://mugalim.edu.gov.kg/mugalim/api/user/login',
+			'https://example.com/api/user/login',
 			{
-				login: pin,
+				login: login,
 				password: password,
 				recaptchaToken: recaptchaToken,
 			}
@@ -103,7 +103,7 @@ export const {
 			async authorize(credentials) {
 				const parsedCredentials = z
 					.object({
-						pin: z.string().min(14).max(14),
+						login: z.string().min(14).max(14),
 						password: z.string().min(6),
 						recaptcha: z.string(),
 					})
@@ -111,10 +111,10 @@ export const {
 
 				if (!parsedCredentials.success) return null;
 
-				const { pin, password, recaptcha } =
+				const { login, password, recaptcha } =
 					parsedCredentials.data as IUserCredentials;
 
-				const userData = await getUser(pin, password, recaptcha);
+				const userData = await getUser(login, password, recaptcha);
 
 				if (!userData) return null;
 

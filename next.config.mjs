@@ -9,6 +9,7 @@ const nextConfig = {
 	typescript: {
 		ignoreBuildErrors: true,
 	},
+	reactStrictMode: true,
 };
 
 export default withNextIntl(nextConfig);
