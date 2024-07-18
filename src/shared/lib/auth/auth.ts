@@ -46,6 +46,58 @@ async function getUser(
 	}
 }
 
+async function getUserMock(
+	login: string,
+	password: string,
+	recaptchaToken: string
+): Promise<IUserState | null> {
+	try {
+		// Mock response example:
+		if (password !== 'qwerty') {
+			throw new Error('Invalid password');
+		}
+
+		const data = {
+			authState: {
+				id: 1,
+				s: 'Zheenkulo',
+				n: 'Beknur',
+				p: 'Zheenkulovich',
+				r: 'admin',
+				idUd: 1,
+				exp: Date.now() + 60 * 60 * 1000,
+			},
+			tokenType: 'bearer',
+			token: '1234567890',
+			expiresIn: 60 * 60,
+		};
+
+		const {
+			authState: { id, s, n, p, r, idUd, exp },
+			tokenType,
+			token,
+			expiresIn,
+		} = data;
+
+		const sessionData = {
+			user: { id, name: n, surname: s, patronymic: p, idUd, role: r },
+			token: {
+				type: tokenType,
+				access_token: token,
+				expires_in: expiresIn,
+				exp_timestamp: exp,
+			},
+		};
+
+		return sessionData;
+	} catch (error) {
+		console.log('Login error:');
+		console.log(error);
+
+		return null;
+	}
+}
+
 export const {
 	auth,
 	signIn,
@@ -69,7 +121,7 @@ export const {
 				const { login, password, recaptcha } =
 					parsedCredentials.data as IUserCredentials;
 
-				const userData = await getUser(login, password, recaptcha);
+				const userData = await getUserMock(login, password, recaptcha);
 
 				if (!userData) return null;
 
