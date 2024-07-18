@@ -46,51 +46,6 @@ async function getUser(
 	}
 }
 
-async function checkUser(): Promise<any> {
-	try {
-		const authorizationType = cookies.get(process.env.NEXT_AUTH_TOKEN_TYPE);
-		const authorizationAccess = cookies.get(process.env.NEXT_AUTH_TOKEN_ACCESS);
-
-		if (!authorizationType || !authorizationAccess) {
-			return null;
-		}
-
-		const { data, error, message } = await $api.post(
-			'https://mugalim.edu.gov.kg/mugalim/api/user/check',
-			{},
-			{
-				headers: {
-					Authorization: `${authorizationType} ${authorizationAccess}`,
-				},
-			}
-		);
-
-		const {
-			authState: { id, s, n, p, r, idUd, exp },
-			tokenType,
-			token,
-			expiresIn,
-		} = data;
-
-		const sessionData = {
-			user: { id: id, name: n, surname: s, patronymic: p, idUd: idUd, role: r },
-			token: {
-				type: tokenType,
-				access_token: token,
-				expires_in: expiresIn,
-				exp_timestamp: exp,
-			},
-		};
-
-		return sessionData;
-	} catch (error) {
-		console.log('Login error:');
-		console.log(error);
-
-		return null;
-	}
-}
-
 export const {
 	auth,
 	signIn,
