@@ -1,0 +1,8 @@
+{
+	"routes": {
+		"home": "Главная",
+		"vacancies": "Вакансии",
+		"contests": "Конкурсы",
+		"notifications": "Уведомление"
+	}
+}

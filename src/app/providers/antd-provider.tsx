@@ -1,4 +1,6 @@
-import { COLORS } from '@/src/app/constants';
+'use client';
+
+import { COLORS } from '@/src/shared/constants';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import { ConfigProvider, ThemeConfig } from 'antd';
 import ru_RU from 'antd/lib/locale/ru_RU';
@@ -8,46 +10,18 @@ const theme: ThemeConfig = {
 	components: {
 		Button: {
 			fontSize: 16,
-			colorBgContainerDisabled: COLORS.gray,
-			colorTextDisabled: COLORS.white,
-			borderRadius: 10,
 		},
 		List: {
 			colorBorder: COLORS.stroke,
 		},
-		Avatar: {
-			colorTextPlaceholder: COLORS.gray,
-		},
-		Tabs: {
-			colorBorderSecondary: COLORS.stroke,
-			borderRadius: 0,
-			borderRadiusLG: 0,
-			cardGutter: -1,
-			margin: 0,
-		},
-		Tag: {
-			fontSize: 15,
-			fontSizeIcon: 14,
-			padding: 8,
-			fontSizeSM: 15,
-			marginXS: 0,
-		},
 		Input: {
-			colorBgContainerDisabled: COLORS.disabled,
-			colorTextDisabled: COLORS.stroke,
 			fontSize: 16,
-			borderRadius: 10,
+			colorTextPlaceholder: COLORS.thirdDark,
+			colorBgContainerDisabled: COLORS.gray,
 		},
 		DatePicker: {
 			colorIcon: COLORS.primary,
 			fontSize: 16,
-		},
-		Typography: {
-			fontSize: 16,
-			lineHeight: 1.2,
-			colorLink: COLORS.black,
-			colorLinkHover: COLORS.black,
-			colorLinkActive: COLORS.black,
 		},
 		Breadcrumb: {
 			fontSize: 12,
@@ -55,26 +29,19 @@ const theme: ThemeConfig = {
 		Divider: {
 			margin: 0,
 		},
-		Image: {
-			colorTextLightSolid: COLORS.white,
-			marginXL: 15,
-		},
 	},
 	token: {
 		colorFillAlter: COLORS.white,
-		borderRadius: 10,
-		borderRadiusLG: 10,
-		controlHeightLG: 49,
-		controlHeight: 40,
-		controlPaddingHorizontal: 20,
-		paddingSM: 20,
+		borderRadius: 4,
+		controlHeight: 36,
+		controlPaddingHorizontal: 16,
 		paddingContentHorizontal: 15,
 		colorPrimary: COLORS.primary,
 		colorError: COLORS.red,
-		colorText: COLORS.black,
-
-		colorBorder: COLORS.gray,
-		colorTextPlaceholder: COLORS.stroke,
+		colorText: COLORS.primaryDark,
+		colorBorder: COLORS.stroke,
+		colorTextPlaceholder: COLORS.thirdDark,
+		colorBgContainerDisabled: COLORS.stroke,
 		colorTextQuaternary: COLORS.stroke,
 		colorIconHover: COLORS.primary,
 	},

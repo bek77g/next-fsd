@@ -1,0 +1,8 @@
+{
+	"routes": {
+		"home": "Башкы бет",
+		"vacancies": "Вакансиялар",
+		"contests": "Сынактар",
+		"notifications": "Билдирүү"
+	}
+}
