@@ -45,8 +45,9 @@ export async function HeaderLinks() {
 	const linkClassName = (href: string) =>
 		clsx(
 			'transition-all stroke-second-dark grid place-items-center gap-[8px] relative duration-300 before:transition-all before:duration-300 before:absolute before:content-[""] before:h-[2px] before:bg-primary before:top-[106%] before:left-1/2 before:-translate-x-1/2 hover:before:w-full hover:stroke-primary',
-			withoutLocalePathname === href && 'stroke-primary',
-			withoutLocalePathname === href ? 'before:w-full' : 'before:w-[0%]'
+			withoutLocalePathname === href
+				? '!stroke-primary before:w-full'
+				: 'before:w-[0%]'
 		);
 
 	return (
