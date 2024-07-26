@@ -41,16 +41,17 @@ export default async function middleware(
 			pathname.startsWith(`/${locale}/register`)
 	);
 
-	if (!isAuthPathWithLocale && !userToken) {
-		const url = new URL(`/${requestLocale || storedLocale}/login`, request.url);
-		url.searchParams.set('callbackUrl', encodeURI(request.url));
-		return NextResponse.redirect(url);
-	}
-	if (isAuthPathWithLocale && userToken) {
-		return NextResponse.redirect(
-			new URL(`/${requestLocale || storedLocale}`, request.url)
-		);
-	}
+	//Commented conditions for strict authenticate
+	// if (!isAuthPathWithLocale && !userToken) {
+	// 	const url = new URL(`/${requestLocale || storedLocale}/login`, request.url);
+	// 	url.searchParams.set('callbackUrl', encodeURI(request.url));
+	// 	return NextResponse.redirect(url);
+	// }
+	// if (isAuthPathWithLocale && userToken) {
+	// 	return NextResponse.redirect(
+	// 		new URL(`/${requestLocale || storedLocale}`, request.url)
+	// 	);
+	// }
 
 	return intlMiddleware(request);
 }
