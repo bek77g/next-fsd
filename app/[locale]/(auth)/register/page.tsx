@@ -1,4 +1,4 @@
-import { RegisterPage } from '@/src/pages/shared/register';
+import { RegisterPage } from '@/src/views/shared/register';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

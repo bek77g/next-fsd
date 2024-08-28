@@ -1,4 +1,4 @@
-import { LoginPage } from '@/src/pages/shared/login';
+import { LoginPage } from '@/src/views/shared/login';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

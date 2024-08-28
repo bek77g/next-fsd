@@ -1,4 +1,4 @@
-import { NotFoundPage } from '@/src/pages/shared/not-found';
+import { NotFoundPage } from '@/src/views/shared/not-found';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
