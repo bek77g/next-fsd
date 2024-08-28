@@ -1,11 +1,10 @@
 'use server';
 
-import { IUserCredentials } from '@/src/entities/shared/user/model';
 import { AuthError } from 'next-auth';
 import { cookies } from 'next/headers';
 import { signIn, signOut } from './auth';
 
-const defaultValues: IUserCredentials = {
+const defaultValues = {
 	pin: '',
 	password: '',
 	recaptcha: '',

@@ -1,5 +1,5 @@
-import { IUserCredentials, IUserState } from '@/src/entities/shared/user/model';
 import { $api, cookies } from '@/src/shared/lib/api';
+import { IUserState } from '@/src/shared/lib/auth/types';
 import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
 import { z } from 'zod';
@@ -118,8 +118,7 @@ export const {
 
 				if (!parsedCredentials.success) return null;
 
-				const { login, password, recaptcha } =
-					parsedCredentials.data as IUserCredentials;
+				const { login, password, recaptcha } = parsedCredentials.data;
 
 				const userData = await getUserMock(login, password, recaptcha);
 

@@ -1,5 +1,5 @@
 'use client';
-import { IUser, IUserToken } from '@/src/entities/shared/user/model';
+import { IUser, IUserToken } from '@/src/shared/lib/auth';
 import { useSession } from 'next-auth/react';
 
 interface AuthHook {

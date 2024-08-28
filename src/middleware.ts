@@ -1,5 +1,5 @@
 import { defaultLocale, locales, LocaleType } from '@/i18n.config';
-import { getToken } from 'next-auth/jwt';
+import { getParsedToken } from '@/src/shared/lib/auth';
 import createMiddleware from 'next-intl/middleware';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
@@ -22,9 +22,8 @@ export default async function middleware(
 
 	const storedLocale = cookies().get('NEXT_LOCALE')?.value;
 
-	const userToken = await getToken({
+	const userToken = await getParsedToken({
 		req: request,
-		secret: process.env.NEXTAUTH_SECRET,
 	});
 
 	if (
