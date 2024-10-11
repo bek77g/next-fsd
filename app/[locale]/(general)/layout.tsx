@@ -1,4 +1,4 @@
-import { Footer, Header } from '@/src/shared/ui/layout';
+import { Footer, Header } from '@/source/shared/ui/layout';
 import type { PropsWithChildren } from 'react';
 
 export default function GeneralLayout({

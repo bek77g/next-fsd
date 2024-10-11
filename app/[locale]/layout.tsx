@@ -1,12 +1,12 @@
 import { defaultLocale, locales } from '@/i18n.config';
-import { AppProvider } from '@/src/app/providers';
+import { AppProvider } from '@/source/app/providers';
 import type { Metadata } from 'next';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-import '@/src/app/styles/antd.scss';
-import '@/src/app/styles/globals.css';
+import '@/source/app/styles/antd.scss';
+import '@/source/app/styles/globals.css';
 
 export const metadata: Metadata = {
 	title: 'Next App | FSD',

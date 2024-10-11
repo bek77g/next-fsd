@@ -1,7 +1,7 @@
 'use client';
 
-import { useAuth } from '@/src/shared/hooks';
-import { logout } from '@/src/shared/lib/auth';
+import { useAuth } from '@/source/shared/hooks';
+import { logout } from '@/source/shared/lib/auth';
 import { Button } from 'antd';
 import { useTranslations } from 'next-intl';
 

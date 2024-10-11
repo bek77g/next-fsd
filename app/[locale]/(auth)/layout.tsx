@@ -1,7 +1,7 @@
 'use client';
 
-import { useAuth } from '@/src/shared/hooks';
-import { Loader, SiteLogo } from '@/src/shared/ui';
+import { useAuth } from '@/source/shared/hooks';
+import { Loader, SiteLogo } from '@/source/shared/ui';
 import { useLocale, useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 
